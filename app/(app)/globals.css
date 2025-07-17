@@ -1,0 +1,588 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Sound wave animation for login page */
+@keyframes sound-wave {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+/* Audio waveform animation */
+.audio-waveform {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  gap: 3px;
+}
+
+.audio-bar {
+  width: 3px;
+  background-color: rgba(var(--primary), 0.3);
+  border-radius: 3px;
+  animation: sound-wave 1.5s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.dark .audio-bar {
+  background-color: rgba(var(--primary), 0.5);
+}
+
+/* Headphones animation */
+.headphones-animation {
+  color: rgba(var(--primary), 0.3);
+}
+
+.dark .headphones-animation {
+  color: rgba(var(--primary), 0.5);
+}
+
+.headphone-path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-headphone 3s ease-in-out infinite alternate;
+}
+
+@keyframes draw-headphone {
+  0% {
+    stroke-dashoffset: 300;
+  }
+  50%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Vinyl record animation */
+.vinyl-animation {
+  color: rgba(var(--primary), 0.3);
+}
+
+.dark .vinyl-animation {
+  color: rgba(var(--primary), 0.5);
+}
+
+.vinyl-record {
+  animation: rotate-vinyl 8s linear infinite;
+  transform-origin: 60px 60px;
+}
+
+@keyframes rotate-vinyl {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-line {
+  animation: sway-line 5s ease-in-out infinite;
+  transform-origin: 60px 30px;
+}
+
+@keyframes sway-line {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Sound wave path animation */
+.sound-wave-path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: draw-wave 15s linear infinite;
+}
+
+@keyframes draw-wave {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1200;
+  }
+}
+
+/* Loading animation */
+.loading-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.loading-animation span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  animation: loading-bounce 1.4s ease-in-out infinite;
+}
+
+.loading-animation span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-animation span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-animation span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.loading-animation span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes loading-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Audio pulse animation */
+.audio-pulse {
+  animation: audio-pulse 2s ease-in-out infinite;
+}
+
+@keyframes audio-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Headphone glow animation */
+.headphone-glow {
+  filter: drop-shadow(0 0 5px rgba(var(--primary), 0.3));
+  animation: headphone-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes headphone-glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(var(--primary), 0.2));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(var(--primary), 0.4));
+  }
+}
+
+/* Vinyl spin animation */
+.vinyl-spin {
+  animation: vinyl-spin 10s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes vinyl-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Input highlight animation */
+.input-highlight:focus {
+  box-shadow: 0 0 0 2px rgba(var(--primary), 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Button glow animations */
+.button-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-glow:hover {
+  box-shadow: 0 0 15px rgba(var(--primary), 0.5);
+}
+
+.button-glow-white {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-glow-white:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Custom utilities */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+}
+
+.glass-effect {
+  @apply bg-white/80 backdrop-blur-md dark:bg-black/50;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Equalizer animation */
+.equalizer-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.equalizer-bar {
+  width: 8%;
+  height: 30%;
+  background-color: rgba(var(--primary), 0.4);
+  border-radius: 2px;
+  animation: equalizer-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes equalizer-animation {
+  0% {
+    height: 30%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* Circular visualizer */
+.circular-visualizer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.visualizer-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 40%;
+  background-color: rgba(var(--primary), 0.4);
+  transform-origin: bottom center;
+  animation: visualizer-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes visualizer-pulse {
+  0% {
+    height: 30%;
+    opacity: 0.3;
+  }
+  100% {
+    height: 45%;
+    opacity: 0.7;
+  }
+}
+
+/* Music note animation */
+.music-note {
+  position: absolute;
+  animation: float-note 45s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float-note {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.15;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-80vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Particle animation */
+.particle {
+  position: absolute;
+  animation: particle-float linear infinite;
+  will-change: transform;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(100px, -100px);
+    opacity: 0;
+  }
+}
+
+/* Audio wave path enhanced */
+.audio-wave-path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-audio-wave 3s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes draw-audio-wave {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -200;
+  }
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .equalizer-bar {
+    width: 6%;
+  }
+
+  .visualizer-bar {
+    height: 35%;
+  }
+
+  .audio-waveform {
+    gap: 2px;
+  }
+
+  .audio-bar {
+    width: 2px;
+  }
+}
+
+/* New animations for enhanced login page */
+@keyframes pulse-opacity {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Radial gradient background */
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* 3D perspective effect */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+/* Smooth transitions */
+.transition-all-smooth {
+  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Enhanced pulsing animation for badge dots */
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}

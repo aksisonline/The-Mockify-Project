@@ -1,0 +1,30 @@
+import { type NextRequest, NextResponse } from "next/server"
+import { voteComment } from "@/lib/discussions-service"
+import { createServerClient } from "@/lib/supabase/server"
+
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    const supabase = await createServerClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    const userId = user.id
+    const { id: commentId } = await params
+    const { voteType } = await request.json()
+
+    if (!voteType || !["up", "down"].includes(voteType)) {
+      return NextResponse.json({ error: "Valid vote type is required" }, { status: 400 })
+    }
+
+    await voteComment(commentId, userId, voteType as "up" | "down")
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error("Error voting on comment:", error)
+    return NextResponse.json({ error: "Failed to vote on comment" }, { status: 500 })
+  }
+}

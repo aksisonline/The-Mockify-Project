@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Confirm Email Change - mockify</title>
+  <style>
+    a { color: #f59e0b; text-decoration: none; }
+    a.cta-button:hover { background: #d97706 !important; }
+  </style>
+</head>
+<body style="margin:0;padding:0;background:#f8fafc;">
+  <center>
+    <table width="100%" bgcolor="#f8fafc" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center">
+          <table width="600" cellpadding="0" cellspacing="0" border="0" style="background:#fff;padding:40px;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.1);margin:40px 0;">
+            <tr>
+              <td>
+                <!-- Header -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:2px solid #e5e7eb;padding-bottom:20px;">
+                  <tr>
+                    <td width="140" valign="top" style="padding-bottom:20px;">
+                      <img src="https://api.mockify.vercel.app/uploads/1750107603700-logo-black.png" alt="mockify Logo" width="120" style="display:block;">
+                    </td>
+                    <td valign="top" style="font-size:12px;color:#6b7280;line-height:1.4;padding-left:20px;">
+                      <strong>mockify</strong><br>Creative Business Solutions<br>Be Connected
+                    </td>
+                    <td align="right" valign="top">
+                      <div style="font-size:20px;font-weight:bold;color:#1f2937;">Email Change</div>
+                      <div style="font-size:14px;color:#6b7280;">Confirm Your New Email</div>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Content -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;">
+                  <tr><td align="center" style="font-size:24px;font-weight:bold;color:#1f2937;">Confirm Change of Email</td></tr>
+                  <tr><td align="center" style="font-size:16px;color:#374151;margin-bottom:30px;padding:20px 0 10px 0;">Follow this link to confirm the update of your email address:</td></tr>
+                  <tr><td align="center" style="padding:0 0 20px 0;">
+                    <table width="90%" cellpadding="0" cellspacing="0" border="0" style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:20px;margin:0 auto;">
+                      <tr><td style="color:#92400e;font-weight:bold;font-size:15px;padding-bottom:8px;">&#128231; Email Change Details</td></tr>
+                      <tr><td style="color:#92400e;font-size:14px;"><strong>From:</strong> <span style="color:#1f2937;font-weight:bold;">{{ .Email }}</span></td></tr>
+                      <tr><td style="color:#92400e;font-size:14px;"><strong>To:</strong> <span style="color:#1f2937;font-weight:bold;">{{ .NewEmail }}</span></td></tr>
+                    </table>
+                  </td></tr>
+                  <tr><td align="center" style="padding:20px 0;">
+                    <a href="{{ .ConfirmationURL }}" class="cta-button" style="display:inline-block;background:#f59e0b;color:#fff;padding:16px 32px;text-decoration:none;border-radius:8px;font-weight:bold;font-size:16px;">Change Email</a>
+                  </td></tr>
+                  <tr><td align="center" style="font-size:14px;color:#6b7280;padding:10px 0 20px 0;">
+                    If the button doesn't work, copy and paste this link into your browser:<br>
+                    <a href="{{ .ConfirmationURL }}" style="color:#f59e0b;word-break:break-all;">{{ .ConfirmationURL }}</a>
+                  </td></tr>
+                  <tr><td align="center" style="padding:20px 0;">
+                    <table width="90%" cellpadding="0" cellspacing="0" border="0" style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:20px;margin:0 auto;">
+                      <tr><td style="color:#166534;font-weight:bold;font-size:16px;padding-bottom:8px;">What happens next?</td></tr>
+                      <tr><td style="color:#374151;font-size:14px;">
+                        <ul style="margin:10px 0 0 20px;padding:0;">
+                          <li>Your email address will be updated in your account</li>
+                          <li>You'll receive a confirmation email at your new address</li>
+                          <li>Future communications will be sent to your new email</li>
+                          <li>Your account security and access remain unchanged</li>
+                        </ul>
+                      </td></tr>
+                    </table>
+                  </td></tr>
+                </table>
+                <!-- Footer -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:40px;">
+                  <tr><td style="padding:0;">
+                    <div style="margin-top:30px;padding:16px;background:#f9fafb;border-radius:6px;border-left:4px solid #e5e7eb;font-size:11px;color:#6b7280;line-height:1.4;text-align:left;">
+                      <strong>Security Notice:</strong> This email was sent to confirm a change to your email address for your mockify account. If you didn't request this change, please ignore this email or contact our support team immediately to secure your account.
+                    </div>
+                  </td></tr>
+                  <tr><td align="center" style="padding:20px 0 0 0;">
+                    <!-- Social Links -->
+                    <table cellpadding="0" cellspacing="0" border="0" style="margin:16px auto 0 auto;">
+                      <tr>
+                        <td><a href="https://www.linkedin.com/company/mockify/" target="_blank" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" width="20" height="20" style="margin:0 8px;filter:grayscale(1);"></a></td>
+                        <td><a href="https://instagram.com/mockify" target="_blank" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" width="20" height="20" style="margin:0 8px;filter:grayscale(1);"></a></td>
+                        <td><a href="https://x.com/mockifyapp" target="_blank" aria-label="X"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" width="20" height="20" style="margin:0 8px;filter:grayscale(1);"></a></td>
+                        <td><a href="https://youtube.com/@mockify" target="_blank" aria-label="YouTube"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" width="20" height="20" style="margin:0 8px;filter:grayscale(1);"></a></td>
+                        <td><a href="https://facebook.com/mockifyapp" target="_blank" aria-label="Facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" width="20" height="20" style="margin:0 8px;filter:grayscale(1);"></a></td>
+                      </tr>
+                    </table>
+                  </td></tr>
+                  <tr><td align="center" style="font-size:12px;color:#6b7280;padding-top:10px;">© 2024 mockify. All rights reserved.</td></tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html> 
