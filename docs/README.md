@@ -62,6 +62,8 @@ The application uses a PostgreSQL database with the following main tables:
 - **rewards**: Reward items and purchases
 - **notifications**: User notifications
 
+The full Schema can be found in the database.sql file.
+
 ## Key Features
 
 - **User Authentication**: Email/password and OTP-based auth
