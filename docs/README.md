@@ -54,25 +54,6 @@
 - [Analytics &amp; Reports](./admin/analytics.md)
 - [System Configuration](./admin/configuration.md)
 
-### 📁 Deployment
-
-- [Environment Setup](./deployment/environment.md)
-- [Database Schema](./deployment/database.md)
-- [Deployment Guide](./deployment/deployment.md)
-
-### 📁 Guides
-
-- [Getting Started](./guides/getting-started.md)
-- [API Integration](./guides/api-integration.md)
-- [Troubleshooting](./guides/troubleshooting.md)
-
-## Quick Start
-
-1. **Setup**: Follow the [Getting Started Guide](./guides/getting-started.md)
-2. **Database**: Review the [Database Schema](./deployment/database.md)
-3. **API**: Check [API Documentation](./api/) for integration
-4. **Admin**: Access [Admin Panel Documentation](./admin/)
-
 ## Database Overview
 
 The application uses a PostgreSQL database with the following main tables:
