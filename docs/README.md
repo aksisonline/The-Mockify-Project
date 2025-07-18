@@ -46,13 +46,6 @@
 - [Tools APIs](./api/tools/README.md)
 - [Admin APIs](./api/admin/README.md)
 
-### 📁 Admin Panel
-
-- [Admin Dashboard](./admin/dashboard.md)
-- [User Management](./admin/users.md)
-- [Content Moderation](./admin/moderation.md)
-- [Analytics &amp; Reports](./admin/analytics.md)
-- [System Configuration](./admin/configuration.md)
 
 ## Database Overview
 
